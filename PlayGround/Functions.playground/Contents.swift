@@ -97,6 +97,67 @@ if let orderedSize = smallLarge(arrayOfInts: emptyArray) {
 }
 
 
+// Inout params
+
+// function that uses inout parameters to alter variables that are defined outside the function
+
+func swaptwo(a: inout Int, b: inout Int) {
+    let temp = a
+    a = b
+    b = temp
+}
+
+var val1 = 29
+var val2 = 300
+
+// like php reference
+// Only work with var, let cannot be change even with inout params
+swap(&val1, &val2)
+
+print("value 1 is : \(val1) and value 2 is : \(val2)")
+
+
+// Nested functions
+
+// first return (-> (Int)) is saying the enclosing func returns a nested func
+
+func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+    
+    func stepForward(input: Int) -> Int {
+        return input + 1
+    }
+    
+    func stepBackward(input: Int) -> Int {
+        return input - 1
+    }
+    
+    return backwards ? stepBackward : stepForward
+}
+
+var currentValue = -6
+let nearToZero = chooseStepFunction(backwards: currentValue > 0)
+
+while currentValue != 0 {
+    print(currentValue)
+    currentValue = nearToZero(currentValue)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
