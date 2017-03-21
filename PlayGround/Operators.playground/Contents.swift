@@ -82,6 +82,23 @@ var paperMapDir: String?
 // Nil coalescing operator (paperMapDir first to be evaluated)
 var navigate = paperMapDir ?? gpsDir
 
+// Range Operators
+
+// between 0 and 4 including 4 (see run's 5 times (0,1,2,3, 4))
+for index in 0...4 {
+    print("\(index) times 3 in \(index * 3)")
+}
+
+// Half open range operator (0 to 4 without 4 (0,1,2,3))
+for index in 0..<4 {
+    print("\(index) times 3 in \(index * 3)")
+}
+let isAllowed = false
+
+if !isAllowed {
+    print("Access Granted")
+}
+
 
 
 
