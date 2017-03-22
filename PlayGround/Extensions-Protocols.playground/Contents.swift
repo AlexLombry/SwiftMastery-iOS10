@@ -40,9 +40,25 @@ print("A 26 mile marathon is \(marathonInKilometers) kilometers long")
 
 @objc protocol Palindrome {
     @objc optional func palindromeCheck(word: String) -> Bool
+    
+    var numberOfWords: Int { get } // read only
+    var numberOfCharacters: Int { get set } // read write
+    
+    // Type property
+    static var longestPalindrome: String { get } // read only
+    
+    
 }
 
 class FunWithWords: Palindrome {
+    
+    // Belongs to instance of a particular type
+    @objc var numberOfCharacters: Int = 0
+    @objc var numberOfWords: Int = 0
+    
+    // Belongs to the type itself
+    @objc static var longestPalindrome: String  = "gateman sees namen garageman sees nametag."
+    
     // implement or not
     @objc func palindromeCheck(word: String) -> Bool {
         var reverse = ""
@@ -63,22 +79,9 @@ var palindromeOrNot = FunWithWords()
 palindromeOrNot.palindromeCheck(word: "DAD")
 palindromeOrNot.palindromeCheck(word: "toto")
 
+palindromeOrNot.numberOfWords
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+FunWithWords.longestPalindrome
 
 
 
