@@ -94,7 +94,7 @@ class ViewController: UIViewController {
         let transition = CATransition()
         transition.type = kCATransitionFade
         transition.duration = 2
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         view.layer.add(transition, forKey: nil)
         
